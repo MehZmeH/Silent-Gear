@@ -23,6 +23,7 @@ import javax.annotation.Nonnull;
 @EventBusSubscriber(modid = SilentGear.MOD_ID, value = Dist.CLIENT)
 public class KeyTracker {
     public static final KeyMapping DISPLAY_PROPERTIES = createKeyBinding("displayItemProperties", GLFW.GLFW_KEY_LEFT_CONTROL);
+    public static final KeyMapping DISPLAY_ENCHANTS = createKeyBinding("displayItemEnchants", GLFW.GLFW_KEY_LEFT_SHIFT);
     @Deprecated
     public static final KeyMapping DISPLAY_TRAITS = createKeyBinding("displayTraits", GLFW.GLFW_KEY_LEFT_SHIFT);
     public static final KeyMapping DISPLAY_CONSTRUCTION = createKeyBinding("displayItemConstruction", GLFW.GLFW_KEY_LEFT_ALT);
@@ -41,6 +42,7 @@ public class KeyTracker {
             event.register(DISPLAY_PROPERTIES);
             event.register(DISPLAY_TRAITS);
             event.register(DISPLAY_CONSTRUCTION);
+            event.register(DISPLAY_ENCHANTS);
             event.register(OPEN_ITEM);
         }
     }
@@ -127,6 +129,14 @@ public class KeyTracker {
         int code = DISPLAY_CONSTRUCTION.getKey().getValue();
         if (code == GLFW.GLFW_KEY_LEFT_ALT || code == GLFW.GLFW_KEY_RIGHT_ALT) {
             return isAltDown();
+        }
+        return isKeyDown(code);
+    }
+
+    public static boolean isDisplayEnchantsDown() {
+        int code = DISPLAY_ENCHANTS.getKey().getValue();
+        if (code == GLFW.GLFW_KEY_LEFT_SHIFT || code == GLFW.GLFW_KEY_RIGHT_SHIFT) {
+            return isShiftDown();
         }
         return isKeyDown(code);
     }
