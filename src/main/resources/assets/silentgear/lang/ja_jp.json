@@ -433,6 +433,8 @@
   "misc.silentgear.tooltip.construction": "Construction",
   "misc.silentgear.tooltip.stats.key": "<Press Ctrl>",
   "misc.silentgear.tooltip.stats": "Stats",
+  "misc.silentgear.tooltip.enchants.key": "<Press Shift>",
+  "misc.silentgear.tooltip.enchants": "Enchants",
   "misc.silentgear.tooltip.altForConstruction": "Construction §8<Press Alt>",
   "misc.silentgear.tooltip.ctrlForStats": "Stats §8<Press Ctrl>",
   "misc.silentgear.broken": "You broke it!",
